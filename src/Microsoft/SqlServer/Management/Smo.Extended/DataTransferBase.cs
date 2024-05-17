@@ -187,7 +187,7 @@ namespace Microsoft.SqlServer.Management.Smo
                     this.destinationAnsiPadding = destServer.UserOptions.AnsiPadding;
 
                     this.Scripter.Options.SetTargetServerInfo(destServer, true);
-                    if (destServer.DatabaseEngineType == DatabaseEngineType.Standalone)
+                    if (destServer.DatabaseEngineType == DatabaseEngineType.Standalone && this.CreateTargetDatabase)
                     {
                         modelDbPrimarySize = this.GetModelDatabasePrimaryFileSize(destServer);
                     }
